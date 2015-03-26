@@ -1,0 +1,21 @@
+<mixit-speakers>
+    <h3>Speakers</h3>
+    <ul>
+        <li each="{speakers}">
+            {firstname} {lastname} ({login}) | {shortDescription}
+        </li>
+    </ul>
+
+    <script>
+        var self = this;
+        var speakersCollection = this.opts.speakers;
+
+        this.on('mount', function() {
+            speakersCollection.fetch().then(function() {
+                self.speakers = speakersCollection.items;
+                self.update();
+            });
+        });
+
+    </script>
+</mixit-speakers>

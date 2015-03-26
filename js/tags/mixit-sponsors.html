@@ -1,0 +1,21 @@
+<mixit-sponsors>
+    <h3>Sponsors</h3>
+    <ul>
+        <li each="{sponsors}">
+            {firstname} {lastname} ({login}) | {shortDescription}
+        </li>
+    </ul>
+
+    <script>
+        var self = this;
+        var sponsorsCollection = this.opts.sponsors;
+
+        this.on('mount', function() {
+            sponsorsCollection.fetch().then(function() {
+                self.sponsors = sponsorsCollection.items;
+                self.update();
+            });
+        });
+
+    </script>
+</mixit-sponsors>
