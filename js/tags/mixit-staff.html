@@ -1,0 +1,21 @@
+<mixit-staff>
+    <h3>Staff</h3>
+    <ul>
+        <li each="{staff}">
+            {firstname} {lastname} ({login}) | {shortDescription}
+        </li>
+    </ul>
+
+    <script>
+        var self = this;
+        var staffCollection = this.opts.staff;
+
+        this.on('mount', function() {
+            staffCollection.fetch().then(function() {
+                self.staff = staffCollection.items;
+                self.update();
+            });
+        });
+
+    </script>
+</mixit-staff>

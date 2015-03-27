@@ -21,6 +21,11 @@ var App = (function () {
       sponsors: new App.Collections.Sponsors()
     });
 
+    riot.mount("mixit-staff",{
+      staff: new App.Collections.Staff()
+    });
+
+
   }
 
   return app;

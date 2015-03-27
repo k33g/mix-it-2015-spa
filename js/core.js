@@ -2,6 +2,10 @@
  * Created by k33g_org on 26/03/15.
  */
 
+/*
+ http://www.mix-it.fr/article/40/wanna-hack-mix-it-
+ */
+
 var App = (function (app) {
 
   app.Core.Collection = speculoos.Class({
