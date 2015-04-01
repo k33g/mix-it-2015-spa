@@ -2,7 +2,7 @@
     <h3>Speakers</h3>
     <ul>
         <li each="{speakers}">
-            {firstname} {lastname} ({login}) | {shortDescription}
+            {firstName} {lastName} ({login}) | {shortdesc}
         </li>
     </ul>
 
@@ -12,6 +12,9 @@
 
         this.on('mount', function() {
             speakersCollection.fetch().then(function() {
+
+                //console.log(speakersCollection.items)
+
                 self.speakers = speakersCollection.items;
                 self.update();
             });
